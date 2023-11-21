@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block content %}
+<div class="main-content">
+    <div class="container">
+        <img src="{{url_for('static', filename='img/iq-ladder.png')}}" class="logo" alt="">
+        <div class="wrapper">
+            <h1>Welkom</h1>
+            <p>We hebben je gemist!</p>
+            <form>
+
+              <input type="email" placeholder="E-mailadres">
+              <input type="password" placeholder="Wachtwoord">
+
+              <p class="recover">
+                <a href="#">Wachtwoord vergeten</a>
+                
+              </p>
+            </form>
+            <button>Inloggen</button>
+            <div class="member">
+              Nog geen account? <a href="{{url_for('auth.register')}}">Registreren</a>
+            </div>
+          </div>
+    </div>
+</div>
+{% endblock %}

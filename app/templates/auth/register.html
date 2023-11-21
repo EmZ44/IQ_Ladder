@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block content %}
+<div class="main-content">
+    <div class="container">
+        <div class="wrapper">
+            <h1>Welkom</h1>
+            <form method="post">
+              <input type="text" placeholder="Voornaam">
+              <input type="text" placeholder="Achternaam">
+              <input type="phone" placeholder="Telefoonnummer">
+              <input type="email" placeholder="E-mailadres">
+              <input type="password" placeholder="Wachtwoord">
+            </form>
+            <button type="submit">Registreren</button>
+            <div class="member">
+              Al een account? <a href="{{url_for('auth.login')}}">Inloggen</a>
+            </div>
+          </div>
+    </div>
+</div>
+{% endblock %}

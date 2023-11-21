@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css') }}">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    {% block head %} {% endblock %}
+</head>
+<body>
+    {% block content %} {% endblock %}
+<div class="sidebar">
+    <div class="top">
+        <div class="logo">
+            <span>IQ-Ladder</span>
+            
+        </div>
+        <i class="bx bx-menu" id="btn"></i>
+    </div>
+        <div class="user">
+            <div>
+                <p class="bold">Zahir Kaya</p>
+                <p>Admin</p>
+
+            </div>
+        </div>
+        <ul>
+            <li>
+                <a href="{{ url_for('auth.login')}}">
+                    <i class="bx bxs-log-in"></i>
+                    <span class="nav-item">Inloggen</span>
+                </a>
+                <span class="tooltip">Inloggen</span>
+            </li>            
+            <li>
+                <a href="#">
+                    <i class="bx bxs-grid-alt"></i>
+                    <span class="nav-item">Dashboard</span>
+                </a>
+                <span class="tooltip">Dashboard</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="bx bxs-message-edit"></i>
+                    <span class="nav-item">Inventaris</span>
+                </a>
+                <span class="tooltip">Inventaris</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="bx bxs-info-square"></i>
+                    <span class="nav-item">Help</span>
+                </a>
+                <span class="tooltip">Help</span>
+            </li>
+            <div class="sidebar-bottom">
+            <li>
+                <a href="#">
+                    <i class="bx bxs-cog"></i>
+                    <span class="nav-item">Instellingen</span>
+                </a>
+                <span class="tooltip">Instellingen</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="bx bxs-log-out"></i>
+                    <span class="nav-item">Uitloggen</span>
+                </a>
+                <span class="tooltip">Uitloggen</span>
+            </li>
+        </div>
+            
+            
+        </ul>
+    </div>
+
+
+</div>
+
+</body>
+<script>
+    let btn = document.querySelector("#btn");
+    let sidebar = document.querySelector(".sidebar");
+    
+    btn.onclick = function() {
+        sidebar.classList.toggle("active");
+    };
+    </script>
+</html>

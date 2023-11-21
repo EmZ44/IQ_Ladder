@@ -1,0 +1,18 @@
+version: '3'
+volumes:
+  data:
+services:
+  db:
+    container_name: iq_database
+    image: mariadb:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: Dedicated_Student
+      MYSQL_USER: KleineSpeler
+      MYSQL_PASSWORD: ElftalPass
+    volumes:
+      - data:/var/lib/mysql
+      - .:/docker-entrypoint-initdb.d
+    ports:
+      - "3306:3306"
+    restart: always
